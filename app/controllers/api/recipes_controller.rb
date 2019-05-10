@@ -1,8 +1,13 @@
 class Api::RecipesController < ApplicationController
 
-	def one_recipe_action
-		@recipe = Recipe.last
-		render 'one_recipe.json.jbuilder'
+	def index
+		@recipes = Recipe.all #array of recipe hashes
+		render 'index.json.jbuilder'
+	end
+
+	def show
+		@recipe = Recipe.find(params[:id]) #one recipe hash
+		render 'show.json.jbuilder'
 	end
 
 end	
