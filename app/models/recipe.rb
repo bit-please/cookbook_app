@@ -1,8 +1,6 @@
 class Recipe < ApplicationRecord
 
-	# def ingredients
-	# 	@ingredients
-	# end
+	belongs_to :user
 
 	# model method
 	def ingredients_list

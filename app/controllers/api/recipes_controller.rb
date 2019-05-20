@@ -15,20 +15,22 @@ class Api::RecipesController < ApplicationController
 	def create
 		@recipe = Recipe.new(
 			title: params[:title],
-			chef: params[:chef],
 			prep_time: params[:prep_time],
 			ingredients: params[:ingredients],
-			directions: params[:directions]
+			directions: params[:directions],
+			user_id: current_user.id
 		)
-		@recipe.save
-		render 'show.json.jbuilder'
+		if @recipe.save
+			render 'show.json.jbuilder'
+		else
+			render json: {errors: @recipe.errors.full_messages}, status: 422
+		end
 	end
 
 	def update
 		@recipe = Recipe.find(params[:id])
 
 		@recipe.title = params[:title] || @recipe.title
-		@recipe.chef = params[:chef] || @recipe.chef
 		@recipe.prep_time = params[:prep_time] || @recipe.prep_time
 		@recipe.ingredients = params[:ingredients] || @recipe.ingredients
 		@recipe.directions = params[:directions] || @recipe.directions
