@@ -1,5 +1,7 @@
 class Api::RecipesController < ApplicationController
 
+	# before_action :authenticate_user
+
 	def index
 		@recipes = Recipe.where("title iLIKE ?", "%#{params[:search]}%").order(:id)
 		render 'index.json.jbuilder'

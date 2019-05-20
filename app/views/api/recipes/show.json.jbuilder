@@ -5,6 +5,7 @@ json.prep_time @recipe.prep_time
 json.ingredients @recipe.ingredients
 json.directions @recipe.directions
 json.image_url @recipe.image_url
+json.current_user current_user
 
 
 json.formatted do
