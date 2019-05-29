@@ -15,5 +15,6 @@ Rails.application.routes.draw do
 	post "/recipes" => "recipes#create"
 	get "/recipes/:id" => "recipes#show"
 	get "/recipes/:id/edit" => "recipes#edit"
+	patch "/recipes/:id" => "recipes#update"
 
 end
