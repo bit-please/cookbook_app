@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- CUSTOM CSS FILE LINK -->
+    <link rel="stylesheet" href="custom.css">
+
     <title>Hello, world!</title>
   </head>
   <body>
@@ -20,10 +23,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="new.html">New Recipe</a>
+            <a class="nav-link" href="#">New Recipe</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -35,49 +38,36 @@
 
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">All Recipes</h1>
-        <p class="lead">Browse your favorite cat-chef recipes!</p>
+        <h1 class="display-4">Add a Recipe</h1>
       </div>
     </div>
 
     <div class="container">
-      <div class="card-columns">
-        <div class="card">
-          <img src="http://swansonhealthcenter.com/wp-content/uploads/2011/07/Egg.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Eggs</h5>
-            <p class="card-text"><button type="button" class="btn btn-light">See More</button></p>
-          </div>
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
-        <div class="card">
-          <img src="http://www.phoenixisstrategic.com/wp-content/uploads/2013/05/blog-empty-sandwich.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Empty Sandwich</h5>
-            <p class="card-text"><button type="button" class="btn btn-light">See More</button></p>
-          </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Ingredients</label>
+          <input type="text" class="form-control" id="exampleInputPassword1">
         </div>
-        <div class="card">
-          <img src="http://cdn2.bigcommerce.com/server6200/aa739/product_images/uploaded_images/red-licorice.png?t=1398725710" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Licorice</h5>
-            <p class="card-text"><button type="button" class="btn btn-light">See More</button></p>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Directions</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter image url">
         </div>
-        <div class="card">
-          <img src="http://cdn-image.myrecipes.com/sites/default/files/styles/300x300/public/image/recipes/sl/05/12/mocha-mud-pie-sl-257949-x.jpg?itok=_ChocANl" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Mud Pie</h5>
-            <p class="card-text"><button type="button" class="btn btn-light">See More</button></p>
-          </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Prep Time</label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter prep time in minutes">
         </div>
-        <div class="card">
-          <img src="http://www.scientificamerican.com/sciam/cache/file/59C0122F-509C-4FEE-99A67FC20C50CEF1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Corn</h5>
-            <p class="card-text"><button type="button" class="btn btn-light">See More</button></p>
-          </div>
+        <div class="row justify-content-md-center">
+          <button type="submit" class="col-2 btn btn-secondary mt-4">Create Recipe</button>
         </div>
-      </div>
+      </form>
     </div>
 
     <!-- Optional JavaScript -->
