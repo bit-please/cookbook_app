@@ -1,3 +1,22 @@
 button.custom-color {
 	background-color: darkgrey;
 }
+
+.custom-light-blue {
+	background-color: #e3f2fd;
+}
+
+.chocolate-background {
+	background-image: url('https://previews.123rf.com/images/virustkk/virustkk1209/virustkk120900006/15345464-chocolate-background.jpg');
+	background-repeat: no-repeat;
+}
+
+/*body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}*/
