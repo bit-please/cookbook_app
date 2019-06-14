@@ -1,8 +1,6 @@
 json.array! @recipes.each do |recipe|
-	json.id recipe.id
-	json.title recipe.title
-	json.ingredients recipe.ingredients
-	json.directions recipe.directions
-	json.image_url recipe.image_url
-	json.prep_time recipe.prep_time
+	json.partial! "recipe.json.jbuilder", recipe: recipe
+	json.user do
+		json.partial! recipe.user, partial: "api/users/user", as: :user
+	end
 end

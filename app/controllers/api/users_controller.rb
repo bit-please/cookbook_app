@@ -15,4 +15,9 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+    render 'show.json.jbuilder'
+  end
+
 end

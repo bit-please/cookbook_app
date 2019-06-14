@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
-  def current_user #returns a hash of user data (according to the jwt) or nil
+  
+  def current_user #returns a user hash of who is logged in OR nil
     auth_headers = request.headers['Authorization']
     if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]
       token = auth_headers[/(?<=\A(Bearer ))\S+\z/]

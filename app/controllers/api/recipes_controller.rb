@@ -18,6 +18,7 @@ class Api::RecipesController < ApplicationController
 			prep_time: params[:prep_time],
 			ingredients: params[:ingredients],
 			directions: params[:directions],
+			image_url: params[:image_url],
 			user_id: current_user.id
 		)
 		if @recipe.save
@@ -34,9 +35,13 @@ class Api::RecipesController < ApplicationController
 		@recipe.prep_time = params[:prep_time] || @recipe.prep_time
 		@recipe.ingredients = params[:ingredients] || @recipe.ingredients
 		@recipe.directions = params[:directions] || @recipe.directions
+		@recipe.image_url = params[:image_url] || @recipe.image_url
 
-		@recipe.save
-		render 'show.json.jbuilder'
+		if @recipe.save
+			render 'show.json.jbuilder'
+		else
+			render json: {errors: @recipe.errors.full_messages}, status: 422
+		end
 	end
 
 	def destroy
