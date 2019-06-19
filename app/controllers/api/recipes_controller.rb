@@ -24,7 +24,7 @@ class Api::RecipesController < ApplicationController
 		if @recipe.save
 			render 'show.json.jbuilder'
 		else
-			render json: {errors: @recipe.errors.full_messages}, status: 422
+			render json: {errors: @recipe.errors.full_messages}, status: :unprocessable_entity
 		end
 	end
 

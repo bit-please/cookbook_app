@@ -1,6 +1,7 @@
 User.create!([
-  {name: "Ace", email: "ace@gmail.com", password_digest: "$2a$10$/8ZDmYOC.qnZ9rTUKBc8peDpSsagbBXzxCjlAKuzh7CmJ3U4dHHKu"}
+  {name: "Ace", email: "ace@gmail.com", password: "password"}
 ])
+
 Recipe.create!([
   {ingredients: "Two slices of bread", title: "Empty Sandwich", directions: "Place slices of bread next to each other.", image_url: "http://www.phoenixisstrategic.com/wp-content/uploads/2013/05/blog-empty-sandwich.jpg", prep_time: 72, user_id: 1},
   {ingredients: "Licorice", title: "Licorice", directions: "Buy licroice from store.", image_url: "http://cdn2.bigcommerce.com/server6200/aa739/product_images/uploaded_images/red-licorice.png?t=1398725710", prep_time: 120, user_id: 1},
