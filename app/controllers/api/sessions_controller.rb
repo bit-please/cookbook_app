@@ -1,6 +1,7 @@
 class Api::SessionsController < ApplicationController
 
 	def create
+    # compares email and password to database, logs in user by sending a JWT
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       jwt = JWT.encode(
