@@ -37,5 +37,31 @@ RSpec.describe "Recipes", type: :request do
   		expect(response).to have_http_status(:unprocessable_entity)
   	end
   end
+
+  describe "PATCH /recipes/:id" do
+    it "updates a recipe" do
+      id = Recipe.first.id
+      patch "/api/recipes/#{id}", params: {title: "Updated name"}
+      recipe = JSON.parse(response.body)
+      expect(recipe["title"]).to eq("Updated name")
+    end
+
+    it "returns an error status code with invalid data" do
+      id = Recipe.first.id
+      patch "/api/recipes/#{id}", params: {title: ""}
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
+  end
+
+  describe "DELETE /recipes/:id" do
+    it "deletes a recipe" do
+      id = Recipe.first.id
+      delete "/api/recipes/#{id}"
+      expect(Recipe.count).to eq(2)
+    end
+  end
+
   
 end
+
+
