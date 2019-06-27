@@ -2,6 +2,7 @@ class Recipe < ApplicationRecord
 
 	belongs_to :user
 	validates :title, length: {minimum: 2}
+	validates :ingredients, :directions, presence: true
 
 	# model method
 	def ingredients_list
