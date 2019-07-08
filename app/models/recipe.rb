@@ -1,6 +1,8 @@
 class Recipe < ApplicationRecord
 
 	belongs_to :user
+	has_many :recipe_categories
+	has_many :categories, through: :recipe_categories
 	validates :title, length: {minimum: 2}
 	validates :ingredients, :directions, presence: true
 

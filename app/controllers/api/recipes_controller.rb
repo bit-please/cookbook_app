@@ -30,6 +30,10 @@ class Api::RecipesController < ApplicationController
 			@recipe.user_id = params[:user_id]
 		end
 		if @recipe.save
+			category_ids = params[:category_ids].split(",")
+			category_ids.each do |category_id|
+				RecipeCategory.create(category_id: category_id, recipe_id: @recipe.id)
+			end
 			render 'show.json.jbuilder'
 		else
 			render json: {errors: @recipe.errors.full_messages}, status: :unprocessable_entity

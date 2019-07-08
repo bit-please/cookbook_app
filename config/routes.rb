@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 		post "/users" => "users#create"
 		get "/users/me" => "users#show"
 		post "/sessions" => "sessions#create"
+
+		get "/categories" => "categories#index"
 	end
 
 	get "/recipes" => "recipes#index"

@@ -7,6 +7,8 @@ json.formatted do
 	json.directions @recipe.directions_list
 end
 
+json.categories @recipe.categories
+
 # only show user object if it matches current_user
 if current_user == @recipe.user
 	json.user do
