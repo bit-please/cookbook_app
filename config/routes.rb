@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 	patch "/recipes/:id" => "recipes#update"
 	delete "/recipes/:id" => "recipes#destroy"
 
+	get "/*path" => proc { [200, {}, [ActionView::Base.new.render(file: 'public/index.html')]] }
+
 end
